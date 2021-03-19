@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    justify-content: center;
+}
+
+header { 
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-family: 'Notable', sans-serif;
+    color: white;
+}
+
+h5 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+  
+h4 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+#timerDiv {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}
+  
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#opponentDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    height: 265px;
+    width: 300px;
+}
+
+#opponentOne {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: violet;
+    width: 80px;
+    height: 90px;
+}
+
+#oppPic {
+    background-color: blue;
+    width: 60px;
+    height: 60px;
+}
+
+#opponentTwo {
+    background-color: red;
+    width: 80px;
+    height: 90px;
+}
+
+#opponentDivTwo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 300px;
+}
+
+#opponentThree {
+    background-color: green;
+    width: 80px;
+    height: 90px;
+}
+
+#opponentFour {
+    background-color: pink;
+    width: 80px;
+    height: 90px;
+}
+
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.input-group {
+    margin: 10px;
+    max-width: 300px;
+    min-width: 300px;
+   height: 10px;
+}
+
+
+#grad1 {
+    height: 200px;
+    background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
+  }
