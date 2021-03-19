@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    justify-content: center;
+}
+
+header { 
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-family: 'Notable', sans-serif;
+    color: white;
+}
+
+h4 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+  
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    margin: 10px;
+    max-width: 150px;
+    min-width: 150px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#opponentDiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    height: 265px;
+    width: 300px;
+}
+
+#opponentOne {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: violet;
+    width: 100px;
+    height: 110px;
+}
+
+#oppPic {
+    background-color: blue;
+    width: 90px;
+    height: 70px;
+}
+
+#opponentTwo {
+    background-color: red;
+    width: 100px;
+    height: 110px;
+}
+
+#opponentDivTwo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    height: 265px;
+    width: 300px;
+}
+
+#opponentThree {
+    background-color: green;
+    width: 100px;
+    height: 110px;
+}
+
+#opponentFour {
+    background-color: pink;
+    width: 100px;
+    height: 110px;
+}
+
+
+
+#grad1 {
+    height: 200px;
+    background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
+  }
