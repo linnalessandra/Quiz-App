@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header { 
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 110px;
+    font-family: 'Notable', sans-serif;
+    color: white;
+}
+  
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    margin: 10px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+h6 {
+    font-size: 12px;
+    margin: 10px;
+    color: white;
+}
+
+#grad1 {
+    height: 200px;
+    background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
+  }
