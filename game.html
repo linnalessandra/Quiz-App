@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="game.css">
+    <script src="logic.js"></script>
     <title>Startpage</title>
 </head>
 
@@ -19,10 +20,11 @@
 
     <header>QUIZ AP</header>
     <h5>HELLO "USER"</h5>
-    <h4>Select a number between 1-20</h4>
+    <h4 id="instruct">Select a number between 1-20</h4>
     <div id="timerDiv">
         01:00 time left
     </div>
+    
 
 
     <div id="roundDiv">
@@ -57,9 +59,9 @@
     </main>
     <div id="buttonDiv">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="SELECT A NUMBER" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <input id="getNumber" type="text" class="form-control" placeholder="SELECT A NUMBER" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append">
-              <button class="btn btn-primary btn-lg" type="button">GUESS</button>
+              <button class="btn btn-primary btn-lg" type="button" onclick="guess()">GUESS</button>
             </div>
           </div>
     </div>
