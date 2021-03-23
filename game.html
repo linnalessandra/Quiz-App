@@ -5,76 +5,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2ab6c683d8.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="game.css">
     <title>Startpage</title>
 </head>
 
-<body id="grad1">
+<body>
 
-    <header>QUIZ AP</header>
-    <h5>HELLO "USER"</h5>
-    <h4>Select a number between 1-20</h4>
-    <div id="timerDiv">
-        01:00 time left
-    </div>
+    <header>
+        <div id="timerDiv">
+            01:00 time left
+        </div>
+    </header>
 
-
-    <div id="roundDiv">
-        
-    </div>
     <main>
-        <div id="opponentDiv">
-            <div id="opponentOne">
+        <div class="opponentDiv">
+            <div class="roundDiv"></div>
+            <div class="opponentOne">
                 <div id="oppPic">
-                
-                </div>
-                <div id="oppText">
-                    Noob-bot
+                    <img src="assets/normalbot.png">
+                    <p>Normalbot</p>
                 </div>
             </div>
 
-            <div id="opponentTwo">
-                2
+            <div class="opponentTwo">
+                <div class="oppPic">
+                    <img src="assets/smartbot.png">
+                    <p>Smartbot</p>
+                </div>
             </div>
 
-            <div id="opponentDivTwo">
-                <div id="opponentThree">
-                    3
+            <div class="opponentDivTwo">
+
+                <div class="opponentThree">
+                    <div id="oppPic">
+                        <img src="assets/hackerbot.png">
+                        <p>Hackerbot</p>
+                    </div>
                 </div>
 
-                <div id="opponentFour">
-                    4
+                <div class="opponentFour">
+                    <div id="oppPic">
+                        <img src="assets/you.png">
+                        <p>You</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </main>
-    <div id="buttonDiv">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="SELECT A NUMBER" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-lg" type="button">GUESS</button>
+        
+    
+    <div class="keyboard d-flex flex-column">
+            <div class="d-flex flex-row justify-content-center mb-3">
+                <button class="btn btn-light border mx-1" type="button">1</button>
+                <button class="btn btn-light border mx-1" type="button">2</button>
+                <button class="btn btn-light border mx-1" type="button">3</button>
+                <button class="btn btn-light border mx-1" type="button">4</button>
+                <button class="btn btn-light border mx-1" type="button">5</button>
             </div>
-          </div>
-    </div>
+            <div class="d-flex flex-row justify-content-center">
+                <button class="btn btn-light border mx-1" type="button">6</button>
+                <button class="btn btn-light border mx-1" type="button">7</button>
+                <button class="btn btn-light border mx-1" type="button">8</button>
+                <button class="btn btn-light border mx-1" type="button">9</button>
+                <button class="btn btn-light border mx-1" type="button">0</button>
+            </div>
+            <div class="selectButton d-flex flex-column">
+                <button class="btn btn-light border mx-1 mt-2" type="button">GUESS</button>
+            </div>
+     </div>
+   
+    </main>
+    
 
 
-    <!-- bootstrap-kod -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <footer class="d-flex flex-row fixed-bottom justify-content-around border-top bg-white mt-3">
+
+        <div class="d-flex flex-column align-items-center">
+            <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.75rem;"></i></a>
+            <p class="text-center">Play</p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.75rem;"></i></a>
+            <p class="text-center">Highscore</p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.75rem;"></i></a>
+          <p class="text-center">Profile</p>
+        </div>
+
+        <div class="d-flex flex-column align-items-center">
+            <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.75rem;"></i></a>
+            <p class="text-center">How to</p>
+        </div>
+
+    </footer>
+
 </body>
 
 </html>
