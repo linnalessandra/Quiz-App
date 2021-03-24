@@ -3,103 +3,55 @@
 }
 
 body {
-    margin: 0;
-    justify-content: center;
-}
-
-header { 
-    font-size: 30px;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-    font-family: 'Notable', sans-serif;
-    color: white;
+    flex-direction: column;
 }
-
-h5 {
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    color: white;
-}
-  
-h4 {
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    color: white;
-}
-
-#timerDiv {
-    font-size: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    color: white;
-}
-  
 
 main {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    max-width: 320px;
 }
 
-#opponentDiv {
+header { 
+    background-color: #424242;
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    height: 265px;
-    width: 300px;
-}
-
-#opponentOne {
-    display: flex;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    background-color: violet;
-    width: 80px;
-    height: 90px;
+    color: white;
+    width: 320px;
+    padding-top: 0.25em;
 }
 
-#oppPic {
-    background-color: blue;
-    width: 60px;
-    height: 60px;
-}
-
-#opponentTwo {
-    background-color: red;
-    width: 80px;
-    height: 90px;
-}
-
-#opponentDivTwo {
+footer {
+    width: 320px;
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    width: 300px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    position: absolute;
+    bottom: 0px;
 }
 
-#opponentThree {
-    background-color: green;
-    width: 80px;
-    height: 90px;
+p {
+    color: black;
+    margin-top: 0.25em;
+}
+h4 {
+    font-size: 1.25em;
 }
 
-#opponentFour {
-    background-color: pink;
-    width: 80px;
-    height: 90px;
+h5 {
+    font-size: 1em;
 }
+
+/* Knappar */
 
 #buttonDiv {
     display: flex;
@@ -109,16 +61,221 @@ main {
     margin-top: 10px;
 }
 
+.selectButton {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Länkade Guess-funktioner i javascript */
+
+.noobBotGuess {
+    font-size: 1.25em;
+    color: red;
+    background-color: white;
+}
+.smartBotGuess {
+    font-size: 1.25em;
+    color: red;
+    background-color: white;
+}
+.hackerBotGuess {
+    font-size: 1.25em;
+    color: red;
+    background-color: white;
+}
+.youGuess {
+    font-size: 1.25em;
+    color: red;
+    background-color: white;
+}
+
+/* instruktioner */
+
+#timerDiv {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    color: white;
+}
+
+/* Layout motståndare och spel */
+
+.game-board {
+    display: grid;
+    grid-template-rows: 80px 140px 80px;
+    grid-template-columns: 80px 140px 80px;
+    padding-top: 2em;
+    padding-bottom: 2.5em;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxNoob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxSmart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxHacker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxYou {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+
+.oppPic {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    z-index: 20;
+    image-rendering: optimizeQuality;
+}
+
+/* Highlight toggle div */
+
+.opponentNoob {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(126, 192, 212, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+
+}
+
+.opponentSmart {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(178, 226, 146, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+    
+}
+
+.opponentDivTwo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    width: 300px;
+    z-index: 10;
+}
+
+.opponentHacker {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(78, 117, 62, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+}
+
+.opponentYou {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(247, 178, 75, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+}
+
+/* Bordet i mitten */
+
+.roundDiv {
+    width: 140px;
+    height: 140px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.guessingDiv {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color: #380015;
+    background-image: url("assets/wood-pattern.png");
+    border: rgb(58, 32, 32) solid 4px;
+    width: 140px;
+    height: 140px;
+    z-index: 5;
+    opacity: 0.8;
+}
+
+.guessingDivTop {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.guessingDivBottom {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 .input-group {
     margin: 10px;
     max-width: 300px;
     min-width: 300px;
-   height: 10px;
+    height: 10px;
+}
+
+  /* Tangentbordet */
+
+.keyboard {
+    width: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background-color: darkgray;
+    padding: 1em;
+    border-radius: 0.25em;
+    position: absolute;
+    bottom: 90px;
+    z-index: 100;
+    visibility: hidden;
 }
 
 
-#grad1 {
-    height: 200px;
-    background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
-  }
+
