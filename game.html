@@ -11,61 +11,105 @@
 
     <link rel="stylesheet" href="game.css">
     <script src="logic.js"></script>
-    <title>Startpage</title>
+    <title>Game on!</title>
 </head>
 
-    <header>
-        <div id="timerDiv">
-            Guess a number between 1-20!
-        </div>
-    </header>
+<body>
+    
+        <header>
+            <div id="timerDiv">
+                Guess a number between 1-20!
+            </div>
+            
+        </header>
 
     <main>
-        <div class="opponentDiv">
-            <div class="roundDiv"></div>
-            <div class="opponentOne">
-                <div id="oppPic">
-                    <img src="assets/normalbot.png">
-                    <p>Normalbot</p>
-                </div>
-            </div>
-
-            <div class="opponentTwo">
-                <div class="oppPic">
-                    <img src="assets/smartbot.png">
-                    <p>Smartbot</p>
-                </div>
-            </div>
-
-            <div class="opponentDivTwo">
-
-                <div class="opponentThree">
-                    <div id="oppPic">
-                        <img src="assets/hackerbot.png">
-                        <p>Hackerbot</p>
-                    </div>
-                </div>
-
-                <div class="opponentFour">
-                    <div id="oppPic">
-                        <img src="assets/you.png">
-                        <p>You</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </main>
-    <div id="buttonDiv">
-        <div class="input-group mb-3">
-            <input id="getNumber" type="text" class="form-control" placeholder="SELECT A NUMBER" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary btn-lg" type="button" onclick="guess()">GUESS</button>
-
-        
     
-    <div class="keyboard d-flex flex-column">
+
+        <div class="game-board">
+            <div id="boxNoob">
+                <div id="oppPic">
+                <img src="assets/normalbot.png">
+                <p>NoobBot</p>
+                 </div>
+            </div>
+
+            <div class="box"><!-- empty --></div>
+                
+            <div id="boxSmart">
+                <div class="oppPic">
+                <img src="assets/smartbot.png">
+                <p>Smartbot</p>
+                </div>
+            </div>
+
+            <div class="box"><!-- empty --></div>
+
+            <div class="box">
+                <div class="guessingDiv">
+                    <div class="guessingDivTop">
+                         <div>
+                            <button id="noob" type="button" class="noobBotGuess btn btn-dark position-relative">
+                                0
+                            </button>
+                         </div>
+                         <div>
+                            <button id="smartBotGuess" type="button" class="smartBotGuess btn btn-dark position-relative">
+                                0
+                            </button></div>
+                        </div>
+                     
+                     <div class="guessingDivBottom">
+                         <div>
+                            <button id="hackerBotGuess" type="button" class="hackerBotGuess btn btn-dark position-relative">
+                                0
+                            </button>
+                         </div>
+                         <div>
+                             <button id="you" type="button" class="youGuess btn btn-dark position-relative">
+                            0 
+                        </button>
+
+                        </div>
+                     </div>
+                </div>
+
+            </div>
+
+            <div class="box"><!-- empty --></div>
+
+            <div id="boxHacker">
+                <div class="oppPic">
+                    <img src="assets/hackerbot.png">
+                    <p>HackerBot</p>
+                    </div>
+            </div>
+
+            <div class="box"><!-- empty --></div>
+
+            <div id="boxYou">
+                <div class="oppPic">
+                    <img src="assets/you.png">
+                    <p>You</p>
+                    </div>
+            </div>
+
+          </div>
+        
+
+          <div id="buttonDiv">
+            <div class="input-group mb-3">
+                <input id="getNumber" type="number" class="form-control" placeholder="SELECT A NUMBER" maxlength="2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary btn-lg" type="button" onclick="guess()">GUESS</button>
+                </div>
+            </div>
+        </div>        
+     
+
+            
+            
+        <div class="keyboard d-flex flex-column">
             <div class="d-flex flex-row justify-content-center mb-3">
                 <button class="btn btn-light border mx-1" type="button">1</button>
                 <button class="btn btn-light border mx-1" type="button">2</button>
@@ -79,50 +123,39 @@
                 <button class="btn btn-light border mx-1" type="button">8</button>
                 <button class="btn btn-light border mx-1" type="button">9</button>
                 <button class="btn btn-light border mx-1" type="button">0</button>
-              
+                
             </div>
             <div class="selectButton d-flex flex-column">
                 <button class="btn btn-light border mx-1 mt-2" type="button">GUESS</button>
             </div>
-     </div>
-   <div class="guessingDiv">
-       <div class="guessingDivTop">
-            <div id="noob" class="noobBotGuess">noob</div>
-            <div class="smartBotGuess">smart</div>
         </div>
-        <div class="guessingDivBottom">
-            <div class="hackerBotGuess">hacker</div>
-            <div id="you" class="youGuess">you</div>
-        </div>
-   </div>
-    </main>
-    
+        
+        <footer class="justify-content-around border-top bg-white">
+            
+            <div class="d-flex flex-column align-items-center">
+                <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Play</p>
+            </div>
+            
+            <div class="d-flex flex-column align-items-center">
+                <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Highscore</p>
+            </div>
+            
+            <div class="d-flex flex-column align-items-center">
+                <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Profile</p>
+            </div>
+            
+            <div class="d-flex flex-column align-items-center">
+                <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">How to</p>
+            </div>
+            
+        </footer>
 
+    </main> 
 
-    <footer class="d-flex flex-row fixed-bottom justify-content-around border-top bg-white mt-3">
-
-        <div class="d-flex flex-column align-items-center">
-            <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.75rem;"></i></a>
-            <p class="text-center">Play</p>
-        </div>
-
-        <div class="d-flex flex-column align-items-center">
-            <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.75rem;"></i></a>
-            <p class="text-center">Highscore</p>
-        </div>
-
-        <div class="d-flex flex-column align-items-center">
-            <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.75rem;"></i></a>
-          <p class="text-center">Profile</p>
-        </div>
-
-        <div class="d-flex flex-column align-items-center">
-            <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.75rem;"></i></a>
-            <p class="text-center">How to</p>
-        </div>
-
-    </footer>
-
-</body>
+    </body>
 
 </html>

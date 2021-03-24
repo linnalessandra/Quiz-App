@@ -3,8 +3,20 @@
 }
 
 body {
-    margin: 0;
-    background-color: #E5F8FB;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 320px;
 }
 
 header { 
@@ -13,12 +25,49 @@ header {
     align-items: center;
     justify-content: center;
     color: white;
-    padding-top: 0.5em;
+    width: 320px;
+    padding-top: 0.25em;
 }
 
+footer {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    position: absolute;
+    bottom: 0px;
+}
+
+p {
+    color: black;
+    margin-top: 0.25em;
+}
 h4 {
     font-size: 1.25em;
 }
+
+h5 {
+    font-size: 1em;
+}
+
+/* Knappar */
+
+#buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.selectButton {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Länkade Guess-funktioner i javascript */
+
 .noobBotGuess {
     font-size: 1.25em;
     color: red;
@@ -40,10 +89,7 @@ h4 {
     background-color: white;
 }
 
-h5 {
-    font-size: 1em;
-}
-  
+/* instruktioner */
 
 #timerDiv {
     font-size: 1em;
@@ -53,35 +99,46 @@ h5 {
     margin: 1em;
     color: white;
 }
-  
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-bottom: black solid 1px;
-    padding: 1.25em;
+/* Layout motståndare och spel */
+
+.game-board {
+    display: grid;
+    grid-template-rows: 80px 140px 80px;
+    grid-template-columns: 80px 140px 80px;
+    padding-top: 2em;
+    padding-bottom: 2.5em;
 }
 
-.opponentDiv {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    height: auto;
-    width: 300px;
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
 }
-
-.opponentOne {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* background-color: violet; */
-    width: 80px;
-    height: 90px;
-    z-index: 10;
+#boxNoob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxSmart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxHacker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
+}
+#boxYou {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #AAA;
 }
 
 .oppPic {
@@ -91,16 +148,38 @@ main {
     align-items: center;
     justify-content: center;
     width: 60px;
-    height: 60px;
     z-index: 20;
     image-rendering: optimizeQuality;
 }
 
-.opponentTwo {
-    /* background-color: red; */
+/* Highlight toggle div */
+
+.opponentNoob {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(126, 192, 212, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
     width: 80px;
-    height: 90px;
-    z-index: 10;
+    height: 80px;
+    z-index: 5;
+
+}
+
+.opponentSmart {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(178, 226, 146, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+    
 }
 
 .opponentDivTwo {
@@ -111,56 +190,54 @@ main {
     z-index: 10;
 }
 
-.opponentThree {
-    /* background-color: green; */
-    width: 80px;
-    height: 90px;
-    z-index: 10;
-}
-
-.opponentFour {
-    /* background-color: pink; */
-    width: 80px;
-    height: 90px;
-}
-
-#buttonDiv {
+.opponentHacker {
     display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 10px;
+    background-color: rgba(78, 117, 62, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
 }
+
+.opponentYou {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(247, 178, 75, 0.5);
+    border:rgb(97, 92, 158) dotted 2px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+}
+
+/* Bordet i mitten */
 
 .roundDiv {
+    width: 140px;
+    height: 140px;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+.guessingDiv {
     display: flex;
+    flex-direction: column;
     border-radius: 50%;
     background-color: #380015;
     background-image: url("assets/wood-pattern.png");
     border: rgb(58, 32, 32) solid 4px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    align-items: center;
-    align-self: center;
-    width: 150px;
-    height: 150px;
-    z-index: 0;
+    width: 140px;
+    height: 140px;
+    z-index: 5;
     opacity: 0.8;
 }
-.guessingDiv {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 120px;
-    height: 120px;
-    z-index: 0;
-    opacity: 0.8;
-}
+
 .guessingDivTop {
     display: flex;
     width: 100%;
@@ -182,31 +259,23 @@ main {
     height: 10px;
 }
 
-
-#grad1 {
-    height: 200px;
-    background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
-  }
+  /* Tangentbordet */
 
 .keyboard {
     width: auto;
     height: fit-content;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    align-self: center;
     background-color: darkgray;
-    margin: 2em;
     padding: 1em;
     border-radius: 0.25em;
     position: absolute;
-    bottom: 60px;
-    align-items: center;
-    align-self: center;
+    bottom: 90px;
     z-index: 100;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
-.selectButton {
-    display: flex;
-    flex-direction: row;
-}
+
+
