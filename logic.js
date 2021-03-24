@@ -1,5 +1,8 @@
 window.addEventListener("load", initSite)
 
+let smartEarlierGuess = []
+let hackerEarlierGuess = []
+
 function initSite() {
     highlightYou()
 }
@@ -64,6 +67,11 @@ function playerNext() {
     document.getElementById("selectBtn").disabled = false;
 }
 
+
+
+
+
+
 function guess() {
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
@@ -99,83 +107,286 @@ function guess() {
         }
     }
 
-    function noobBotGuess(){
-        let instruct = document.getElementById("timerDiv")
+function noobBotGuess(){
+    let instruct = document.getElementById("timerDiv")
 
-        let noobGuess = Math.random()*20
-        noobGuess = Math.ceil(noobGuess)
-        console.log(noobGuess)
+    let noobGuess = Math.random()*20
+    noobGuess = Math.ceil(noobGuess)
+    console.log(noobGuess)
 
-        let noob = document.getElementById("noob")
-        noob.innerHTML = ""
-        noob.innerHTML = noobGuess
+    let noob = document.getElementById("noob")
+    noob.innerHTML = ""
+    noob.innerHTML = noobGuess
 
-        highlightNoob()
-        
-
-        if (noobGuess < randomNumber){
-            
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Higher"
-            awaitInstructPlayer()
+    highlightNoob()
     
-        
-        } else if (noobGuess > randomNumber) {
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Lower"
-            awaitInstructPlayer()
 
-        } else if (noobGuess == randomNumber) {
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Noob bot wins! Thats my number!"
-            
-            if (confirm('Noob bot wins! Thats my number! Do you want to play again?')) {
-                // Yes
-                window.location.reload()
-                } else {
-                // No
-                }
+    if (noobGuess < randomNumber){
+        
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Higher"
+        awaitInstructPlayer()
+
+    
+    } else if (noobGuess > randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Lower"
+        awaitInstructPlayer()
+
+    } else if (noobGuess == randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Noob bot wins! Thats my number!"
+        
+        if (confirm('Noob bot wins! Thats my number! Do you want to play again?')) {
+            // Yes
+            window.location.reload()
+            } else {
+            // No
             }
+        }
+}
+
+
+
+
+
+
+ //PLAYERS GUESS VS SMART BOT   
+function guessVsSmart() {
+    let instruct = document.getElementById("timerDiv")
+    let guess = document.getElementById("getNumber").value
+    let you = document.getElementById("you")
+    
+    you.innerHTML = ""
+    you.innerHTML = guess
+    document.getElementById("getNumber").value = ""
+
+    highlightYou()
+    document.getElementById("selectBtn").disabled = true;
+
+    if (guess < randomNumber){
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Higher"
+        awaitInstructSmart()
+    
+    } else if (guess > randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Lower"
+        awaitInstructSmart()
+
+    } else if (guess == randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Great you win! Thats my number!"
+        
+        if (confirm('Great you win! Thats my number! Do you want to play again?')) {
+            // Yes
+            window.location.reload()
+            } else {
+            window.location("index.html")
+            }
+        }
+    }
+
+
+//SMART BOTS GUESS
+function smartBotGuess(){
+
+    let instruct = document.getElementById("timerDiv")
+
+    let smartGuess = Math.random()*20
+    smartGuess = Math.ceil(smartGuess)
+    console.log(smartGuess)
+
+    function numberCheck(array) {
+        for (i = 0; i < array.length; i++) {
+            
+            if (smartGuess == array[i]) {
+                smartGuess = Math.random()*20
+                smartGuess = Math.ceil(smartGuess)
+                numberCheck(array)
+            }
+        }
+    }
+
+    numberCheck(smartEarlierGuess)
+
+    smartEarlierGuess.push(smartGuess)
+    console.log("Array: " + smartEarlierGuess)
+
+    let smartBotGuess = document.getElementById("smartBotGuess")
+    smartBotGuess.innerHTML = ""
+    smartBotGuess.innerHTML = smartGuess
+
+    highlightSmart()
+    
+
+    if (smartGuess < randomNumber){
+        
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Higher"
+        awaitInstructPlayer()
+
+    
+    } else if (smartGuess > randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Lower"
+        awaitInstructPlayer()
+
+    } else if (smartGuess == randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Noob bot wins! Thats my number!"
+        
+        if (confirm('Smart bot wins! Thats my number! Do you want to play again?')) {
+            // Yes
+            window.location.reload()
+            } else {
+            // No
+            }
+        }
+}
+
+//ADDS 3 SECONDS DELAY BEFORE SMART BOTS GUESS
+function awaitSmart() {
+    console.log("awaitSmart running")
+    setTimeout(smartBotGuess, 3000)  
+}
+
+//ADDS 3 SECONDS DELAY AFTER PLAYERS GUESS
+function awaitInstructSmart() {
+    console.log("awaitInstructSmart running")
+    setTimeout(smartNext, 3000)
+}
+
+//INSTRUCTOR SAYS ITS SMART BOTS TURN
+function smartNext() {
+    let instruct = document.getElementById("timerDiv")
+    instruct.innerHTML = ""
+    instruct.innerHTML = "Smart-bot, you're up!"
+
+    /* highlightSmart() */
+    awaitSmart()
+}
+
+
+
+
+
+//PLAYERS GUESS VS HACKER BOT
+function guessVsHacker() {
+    let instruct = document.getElementById("timerDiv")
+    let guess = document.getElementById("getNumber").value
+    let you = document.getElementById("you")
+    
+    you.innerHTML = ""
+    you.innerHTML = guess
+    document.getElementById("getNumber").value = ""
+
+    hackerEarlierGuess.push(guess)
+
+    highlightYou()
+    document.getElementById("selectBtn").disabled = true;
+
+    if (guess < randomNumber){
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Higher"
+        awaitInstructHacker()
+    
+    } else if (guess > randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Lower"
+        awaitInstructHacker()
+
+    } else if (guess == randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Great you win! Thats my number!"
+        
+        if (confirm('Great you win! Thats my number! Do you want to play again?')) {
+            // Yes
+            window.location.reload()
+            } else {
+            window.location("index.html")
+            }
+        }
+    }
+
+
+//HACKER BOTS GUESS
+function hackerBotGuess(){
+
+    let instruct = document.getElementById("timerDiv")
+
+    let hackerGuess = Math.random()*20
+    hackerGuess = Math.ceil(hackerGuess)
+    console.log(hackerGuess)
+
+    function numberCheck(array) {
+        for (i = 0; i < array.length; i++) {
+            
+            if (hackerGuess == array[i]) {
+                hackerGuess = Math.random()*20
+                hackerGuess = Math.ceil(hackerGuess)
+                numberCheck(array)
+            }
+        }
     }
     
-    function smartBotGuess(){
-        let instruct = document.getElementById("timerDiv")
+    numberCheck(hackerEarlierGuess)
 
-        let smartGuess = Math.random()*20
-        smartGuess = Math.ceil(smartGuess)
-        console.log(smartGuess)
+    hackerEarlierGuess.push(hackerGuess)
+    console.log("Array: " + hackerEarlierGuess)
 
-        let smartBotGuess = document.getElementById("smartBotGuess")
-        smartBotGuess.innerHTML = ""
-        smartBotGuess.innerHTML = smartGuess
+    let hackerBotGuess = document.getElementById("hackerBotGuess")
+    hackerBotGuess.innerHTML = ""
+    hackerBotGuess.innerHTML = hackerGuess
 
-        highlightSmart()
-        
-
-        if (smartGuess < randomNumber){
-            
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Higher"
-            awaitInstructPlayer()
+    /* highlightHacker() */
     
+    if (hackerGuess < randomNumber){
         
-        } else if (smartGuess > randomNumber) {
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Lower"
-            awaitInstructPlayer()
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Higher"
+        awaitInstructPlayer()
 
-        } else if (smartGuess == randomNumber) {
-            instruct.innerHTML = ""
-            instruct.innerHTML = "Noob bot wins! Thats my number!"
-            
-            if (confirm('Noob bot wins! Thats my number! Do you want to play again?')) {
-                // Yes
-                window.location.reload()
-                } else {
-                // No
-                }
+    
+    } else if (hackerGuess > randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Lower"
+        awaitInstructPlayer()
+
+    } else if (hackerGuess == randomNumber) {
+        instruct.innerHTML = ""
+        instruct.innerHTML = "Noob bot wins! Thats my number!"
+        
+        if (confirm('Hacker bot wins! Thats my number! Do you want to play again?')) {
+            // Yes
+            window.location.reload()
+            } else {
+            // No
             }
-    }
+        }
+}
+
+//ADDS 3 SECONDS DELAY BEFORE HACKER BOTS GUESS
+function awaitHacker() {
+    console.log("awaitHacker running")
+    setTimeout(hackerBotGuess, 3000)  
+}
+
+//ADDS 3 SECONDS DELAY AFTER PLAYERS GUESS
+function awaitInstructHacker() {
+    console.log("awaitInstructHacker running")
+    setTimeout(hackerNext, 3000)
+}
+
+//INSTRUCTOR SAYS ITS HACKER BOTS TURN
+function hackerNext() {
+    let instruct = document.getElementById("timerDiv")
+    instruct.innerHTML = ""
+    instruct.innerHTML = "Hacker-bot, you're up!"
+
+    /* highlightHacker() */
+    awaitHacker()
+}
 
 
 
