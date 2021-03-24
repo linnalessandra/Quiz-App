@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <link rel="stylesheet" href="game.css">
-    <script src="logic.js"></script>
+    <script defer src="logic.js"></script>
     <title>Game on!</title>
 </head>
 
@@ -101,7 +101,7 @@
             <div class="input-group mb-3">
                 <input id="getNumber" type="number" class="form-control" placeholder="SELECT A NUMBER" maxlength="2">
                 <div class="input-group-append">
-                    <button class="btn btn-primary btn-lg" id="selectBtn" type="button" onclick="guess()">GUESS</button>
+                    <button class="btn btn-primary btn-lg" id="selectBtn" type="button" onclick="guessVsHacker()">GUESS</button>
                 </div>
             </div>
         </div>        
