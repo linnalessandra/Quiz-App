@@ -9,16 +9,28 @@ randomNumber = Math.ceil(randomNumber)
 
 console.log(randomNumber)
 
+/* Highlight You */
+
 function highlightYou() {
     let YouHighlight = document.getElementById("boxYou");
     YouHighlight.classList.toggle("opponentYou");
 }
 
+/* Highlight noobBot */
 
 function highlightNoob() {
     let noobHighlight = document.getElementById("boxNoob");
     noobHighlight.classList.toggle("opponentNoob");
 }
+
+/* Highlight smartBot */
+
+function highlightSmart() {
+    let smartHighlight = document.getElementById("boxSmart");
+    smartHighlight.classList.toggle("opponentSmart");
+}
+
+/* Vänta på noobBot */
 
 function awaitNoob() {
     console.log("awaitNoob running")
@@ -49,6 +61,7 @@ function playerNext() {
     instruct.innerHTML = ""
     instruct.innerHTML = "Player, you're up!"
     highlightYou()
+    document.getElementById("selectBtn").disabled = false;
 }
 
 function guess() {
@@ -58,9 +71,11 @@ function guess() {
     
     you.innerHTML = ""
     you.innerHTML = guess
-    
+    document.getElementById("getNumber").value = ""
+
     highlightYou()
-    
+    document.getElementById("selectBtn").disabled = true;
+
     if (guess < randomNumber){
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
@@ -96,6 +111,7 @@ function guess() {
         noob.innerHTML = noobGuess
 
         highlightNoob()
+        
 
         if (noobGuess < randomNumber){
             
@@ -110,6 +126,45 @@ function guess() {
             awaitInstructPlayer()
 
         } else if (noobGuess == randomNumber) {
+            instruct.innerHTML = ""
+            instruct.innerHTML = "Noob bot wins! Thats my number!"
+            
+            if (confirm('Noob bot wins! Thats my number! Do you want to play again?')) {
+                // Yes
+                window.location.reload()
+                } else {
+                // No
+                }
+            }
+    }
+    
+    function smartBotGuess(){
+        let instruct = document.getElementById("timerDiv")
+
+        let smartGuess = Math.random()*20
+        smartGuess = Math.ceil(smartGuess)
+        console.log(smartGuess)
+
+        let smartBotGuess = document.getElementById("smartBotGuess")
+        smartBotGuess.innerHTML = ""
+        smartBotGuess.innerHTML = smartGuess
+
+        highlightSmart()
+        
+
+        if (smartGuess < randomNumber){
+            
+            instruct.innerHTML = ""
+            instruct.innerHTML = "Higher"
+            awaitInstructPlayer()
+    
+        
+        } else if (smartGuess > randomNumber) {
+            instruct.innerHTML = ""
+            instruct.innerHTML = "Lower"
+            awaitInstructPlayer()
+
+        } else if (smartGuess == randomNumber) {
             instruct.innerHTML = ""
             instruct.innerHTML = "Noob bot wins! Thats my number!"
             
