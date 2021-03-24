@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="login.css">
+    <script src="login.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -27,11 +28,11 @@
             
             <div class="input-group mb-3" style="width: 100%; ">
                 <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="quickLogIn"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
             <div style="display: flex; justify-content: flex-end; width: 100%;">
-                <button type="button" class="btn btn-outline-dark">Continue without login</button>
+                <button type="button" onclick="addUser()" class="btn btn-outline-dark">Continue without login</button>
             </div>
 
             
