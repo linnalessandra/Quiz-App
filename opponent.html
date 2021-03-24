@@ -10,47 +10,97 @@
     <script src="https://kit.fontawesome.com/2ab6c683d8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="opponent.css">
     <title>Startpage</title>
 </head>
 
-<body id="grad1">
+<body>
 
-    <header>QUIZ AP</header>
-    <h4>Choose your opponent</h4>
-
+    <header>
+        <div id="headerDiv">
+            Choose your opponent
+        </div>
+        
+    </header>
     <main>
+
         <div id="opponentDiv">
+
+            <!-- #1 -->
             <div id="opponentOne">
-                <div id="oppPic">
-                
+                <div id="boxNoob">
+                    <div id="oppPicOne">
+                    <img src="assets/normalbot.png">
+                     </div>
                 </div>
                 <div id="oppText">
-                    Noob-bot
+                    <b>NoobBot</b><br>
+                    <p>easy | slow | kind</p>
                 </div>
             </div>
 
+            <!-- #2  -->
             <div id="opponentTwo">
-                2
-            </div>
-
-
-
-            <div id="opponentDivTwo">
-                <div id="opponentThree">
-                    3
+                <div id="boxNoob">
+                    <div id="oppPicTwo">
+                        <img src="assets/smartbot.png">
+                     </div>
                 </div>
-
-                <div id="opponentFour">
-                    4
+                <div id="oppText">
+                    <b>Smartbot</b><br>
+                    <p>normal | faster | clever</p>
                 </div>
             </div>
+
+            <div id="opponentThree">
+                <div id="boxNoob">
+                    <div id="oppPicThree">
+                        <img src="assets/hackerbot.png">
+                     </div>
+                </div>
+                <div id="oppText">
+                    <b>HackerBot</b><br>
+                    <p>hard | fastest | devilish</p>
+                </div>
+            </div>
+
+            <div id="buttonDiv">
+                <button type="button" class="btn btn-primary btn-lg">PLAY</button>
+            </div>
+        
+            <footer class="justify-content-around border-top bg-white">
+            
+                <div class="d-flex flex-column align-items-center">
+                    <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                    <p class="text-center">Play</p>
+                </div>
+                
+                <div class="d-flex flex-column align-items-center">
+                    <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.5rem;"></i></a>
+                    <p class="text-center">Highscore</p>
+                </div>
+                
+                <div class="d-flex flex-column align-items-center">
+                    <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
+                    <p class="text-center">Profile</p>
+                </div>
+                
+                <div class="d-flex flex-column align-items-center">
+                    <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
+                    <p class="text-center">How to</p>
+                </div>
+                
+            </footer>
+        
         </div>
+
+        
+        
+        </div>
+   
+   
     </main>
-    <div id="buttonDiv">
-        <button type="button" class="btn btn-primary btn-lg">PLAY</button>
-    </div>
 
 
     <!-- bootstrap-kod -->
