@@ -3,18 +3,24 @@
 }
 
 body {
-    margin: 0;
-    justify-content: center;
-}
-
-header { 
-    font-size: 40px;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
-    font-family: 'Notable', sans-serif;
+    flex-direction: column;
+}
+
+
+
+header { 
+    background-color: #424242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
+    width: 320px;
+    height: 70px;
+    padding-top: 0.25em;
 }
 
 h4 {
@@ -22,7 +28,7 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
 }
   
@@ -35,9 +41,8 @@ h4 {
 }
 
 .btn-primary {
-    margin: 10px;
-    max-width: 150px;
-    min-width: 150px;
+    font-size: 13px;
+    margin: 15px;
 }
 
 main {
@@ -46,61 +51,101 @@ main {
     flex-wrap: wrap;
 }
 
+
 #opponentDiv {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    height: 265px;
-    width: 300px;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: column;
+    width: 320px;
+    background-color: white;
 }
 
+
+/* NoobBot */
 #opponentOne {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: violet;
-    width: 100px;
-    height: 110px;
+    width: 120px;
+    margin-top: 10px;
+
 }
 
-#oppPic {
-    background-color: blue;
-    width: 90px;
+#oppPicOne {
     height: 70px;
+    /* margin-top: 2px; */
+    justify-content: center;
+
 }
 
+p {
+    font-size: 10px;
+
+}
+
+#oppText {
+    text-align: center;
+    font-size: 15px;
+}
+
+/* smartBot */
 #opponentTwo {
-    background-color: red;
-    width: 100px;
-    height: 110px;
-}
-
-#opponentDivTwo {
     display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    height: 265px;
-    width: 300px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 120px;
 }
 
+#oppPicTwo {
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* hackerBot */
 #opponentThree {
-    background-color: green;
-    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 120px;
     height: 110px;
 }
 
-#opponentFour {
-    background-color: pink;
-    width: 100px;
-    height: 110px;
+#oppPicThree {
+    height: 70px;
+    justify-content: center;
+
+}
+
+footer {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    position: absolute;
+    bottom: 0px;
+}
+
+p {
+    color: black;
+    margin-top: 0.25em;
+}
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
 }
 
 
-
-#grad1 {
+/* #grad1 {
     height: 200px;
     background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
-  }
+    /* background-image: */ /* linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
+  } */ 
