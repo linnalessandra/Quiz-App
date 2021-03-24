@@ -3,41 +3,70 @@
 }
 
 body {
-    margin: 0;
-}
-
-header { 
-    font-size: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 110px;
-    font-family: 'Notable', sans-serif;
-    color: white;
-}
-  
-#buttonDiv {
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+
+header { 
+    background-color: #424242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 320px;
+    height: 70px;
+    padding-top: 0.25em;
+}
+
+h4 {
+    color: white;
+    font-family: 'Notable', sans-serif;
+    font-size: 45px;
     margin-top: 10px;
+}
+
+
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 320px;
+    height: 480px;
 }
 
 .btn-primary {
     margin: 10px;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 170px;
+    min-width: 170px;
+    font-size: 15px;
 }
 
 h6 {
     font-size: 12px;
-    margin: 10px;
-    color: white;
+    color:white;
 }
 
+footer {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+    position: absolute;
+    bottom: 0px;
+    background-color: #424242;
+    height: 50px;
+}
+
+
 #grad1 {
-    height: 200px;
+    height: 490px;
     background-color: rgb(32, 25, 119); /* For browsers that do not support gradients */
     background-image: linear-gradient(to right, rgb(56, 41, 83) , rgb(86, 140, 202));
   }
