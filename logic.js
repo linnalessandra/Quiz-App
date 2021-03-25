@@ -1,7 +1,16 @@
-window.addEventListener("load", initSite)
-
 let smartEarlierGuess = []
 let hackerEarlierGuess = []
+
+const checked = localStorage.getItem('id');
+if (checked == 'Check1') {
+    document.getElementById("selectBtn").addEventListener("click", guess)
+} else if (checked == 'Check2') {
+    document.getElementById("selectBtn").addEventListener("click", guessVsSmart)
+} else if (checked == 'Check3') {
+    document.getElementById("selectBtn").addEventListener("click", guessVsHacker)
+}
+
+window.addEventListener("load", initSite)
 
 function initSite() {
     highlightYou()
@@ -101,9 +110,9 @@ function guess() {
         if (confirm('Great you win! Thats my number! Do you want to play again?')) {
             // Yes
             window.location.reload()
-          } else {
+        } else {
             window.location("index.html")
-          }
+        }
         }
     }
 
@@ -151,7 +160,7 @@ function noobBotGuess(){
 
 
 
- //PLAYERS GUESS VS SMART BOT   
+//PLAYERS GUESS VS SMART BOT   
 function guessVsSmart() {
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
@@ -387,6 +396,9 @@ function hackerNext() {
     /* highlightHacker() */
     awaitHacker()
 }
+
+
+
 
 
 
