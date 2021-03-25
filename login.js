@@ -20,6 +20,12 @@ async function addUser() {
     console.log(result)
 }
 
+//function för knapp till startsida
+function goToIndex() {
+    window.location.href = "index.html"
+}
+
+
 
 //hämtar user
 /* async function getUser() {
