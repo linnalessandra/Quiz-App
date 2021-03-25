@@ -22,85 +22,51 @@
 <body>
 
     <header>
-        <div id="headerDiv">
-            Choose your opponent
-        </div>
+       <div id="headerDiv">
         
+        </div>
     </header>
 
     <main>
 
         <div id="opponentDiv">
-            <h3 style="color: white;">Quick play</h3>
+            <h3>Quick play</h3>
             
-            
-            <div class="input-group mb-3" style="width: 100%; ">
+    
+            <div class="input-group mb-3" style="width: 70%; ">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input id="quickLogIn"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
-            <div style="display: flex; justify-content: flex-end; width: 100%;">
-                <button type="button" onclick="addUser()" class="btn btn-outline-dark">Continue without login</button>
+            <div style="display: flex; justify-content: flex-end; width: 70%;">
+                <button type="button" onclick="addUser()" class="btn btn-primary btn-lg">Continue without login</button>
             </div>
 
             
-            <h3 style="color: white;">Login</h3>
+            <h3>Login</h3>
             
 
-            <div class="input-group mb-3" style="width: 100%; ">
+            <div class="input-group mb-3" style="width: 70%; ">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <div class="input-group mb-3" style="width: 100%; ">
+            <div class="input-group mb-3" style="width: 70%; ">
                 <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
-            <div style="display: flex; justify-content: flex-end; width: 100%;">
-                <button type="button" class="btn btn-outline-dark" style="margin-right: 2%;" >Register</button>
-                <button type="button" class="btn btn-outline-dark">Login and continue</button>
+            <div style="display: flex; justify-content: flex-end; width: 70%;">
+                <button type="button" class="btn btn-primary btn-lg" style="margin-right: 2%;" >Register</button>
+                <button type="button" class="btn btn-primary btn-lg">Login and continue</button>
             </div>
-        </div>
-            
         
+            <button type="button" onclick="goToIndex()"class="btn btn-primary btn-lg" style="margin-right: 70%; margin-top: 10%;"><i class="arrow left"></i>Go Back</button>
         </div>
-   
-   
+        
+        <footer><!-- <h6>Copyright 2020-2021 by "NAMN"</h6> --></footer>
+    </div>
+
+    
     </main>
 
-   <!--  <div id="main" style="display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; flex-direction: column;" >
-        <div  id="container" style="display: flex; align-items: center; width: 95vw; height: 100vh; flex-direction: column;">
-            
-            <h3 style="color: white;">Quick play</h3>
-            
-            
-            <div class="input-group mb-3" style="width: 100%; ">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <input id="quickLogIn"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-
-            <div style="display: flex; justify-content: flex-end; width: 100%;">
-                <button type="button" onclick="addUser()" class="btn btn-outline-dark">Continue without login</button>
-            </div>
-
-            
-            <h3 style="color: white;">Login</h3>
-            
-
-            <div class="input-group mb-3" style="width: 100%; ">
-                <span class="input-group-text" id="basic-addon1">@</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3" style="width: 100%; ">
-                <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-            </div>
-
-            <div style="display: flex; justify-content: flex-end; width: 100%;">
-                <button type="button" class="btn btn-outline-dark" style="margin-right: 2%;" >Register</button>
-                <button type="button" class="btn btn-outline-dark">Login and continue</button>
-            </div>
-        </div>
-          
-    </div> -->
-    
 </body>
 </html>
