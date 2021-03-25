@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="opponent.css">
+    <script defer src="opponent.js"></script>
+
     <title>Startpage</title>
 </head>
 
@@ -26,12 +28,13 @@
     <main>
 
         <div id="opponentDiv">
-
+        
             <!-- #1 -->
             <div id="opponentOne">
+               
                 <div id="boxNoob">
                     <div id="oppPicOne">
-                    <img src="assets/normalbot.png">
+                        <input type="radio" checked="true" id="Check1" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/normalbot.png">
                      </div>
                 </div>
                 <div id="oppText">
@@ -44,7 +47,7 @@
             <div id="opponentTwo">
                 <div id="boxNoob">
                     <div id="oppPicTwo">
-                        <img src="assets/smartbot.png">
+                        <input type="radio" id="Check2" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/smartbot.png">
                      </div>
                 </div>
                 <div id="oppText">
@@ -56,7 +59,7 @@
             <div id="opponentThree">
                 <div id="boxNoob">
                     <div id="oppPicThree">
-                        <img src="assets/hackerbot.png">
+                        <input type="radio" id="Check3" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/hackerbot.png">
                      </div>
                 </div>
                 <div id="oppText">
@@ -66,7 +69,7 @@
             </div>
 
             <div id="buttonDiv">
-                <button type="button" class="btn btn-primary btn-lg">PLAY</button>
+                <button type="button" onclick="playGame()" class="btn btn-primary btn-lg">PLAY</button>
             </div>
         
             <footer class="justify-content-around border-top bg-white">

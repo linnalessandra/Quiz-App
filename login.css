@@ -3,9 +3,28 @@ h3 {
     padding-bottom: 3vh;
 }
 
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header { 
+    background-color: #424242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 320px;
+    height: 70px;
+    padding-top: 0.25em;
+}
+
 #main {
     min-width: 280px;
-    
+    background-color: blue;
 }
 
 #container {
