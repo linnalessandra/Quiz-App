@@ -20,7 +20,54 @@
     <title>Login</title>
 </head>
 <body>
-    <div id="main" style="display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; flex-direction: column;" >
+
+    <header>
+        <div id="headerDiv">
+            Choose your opponent
+        </div>
+        
+    </header>
+
+    <main>
+
+        <div id="opponentDiv">
+            <h3 style="color: white;">Quick play</h3>
+            
+            
+            <div class="input-group mb-3" style="width: 100%; ">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input id="quickLogIn"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; width: 100%;">
+                <button type="button" onclick="addUser()" class="btn btn-outline-dark">Continue without login</button>
+            </div>
+
+            
+            <h3 style="color: white;">Login</h3>
+            
+
+            <div class="input-group mb-3" style="width: 100%; ">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3" style="width: 100%; ">
+                <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; width: 100%;">
+                <button type="button" class="btn btn-outline-dark" style="margin-right: 2%;" >Register</button>
+                <button type="button" class="btn btn-outline-dark">Login and continue</button>
+            </div>
+        </div>
+            
+        
+        </div>
+   
+   
+    </main>
+
+   <!--  <div id="main" style="display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; flex-direction: column;" >
         <div  id="container" style="display: flex; align-items: center; width: 95vw; height: 100vh; flex-direction: column;">
             
             <h3 style="color: white;">Quick play</h3>
@@ -53,7 +100,7 @@
             </div>
         </div>
           
-    </div>
+    </div> -->
     
 </body>
 </html>
