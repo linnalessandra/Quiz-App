@@ -69,21 +69,33 @@ h5 {
 /* Länkade Guess-funktioner i javascript */
 
 .noobBotGuess {
+    padding: 0px;
+    height: 45px;
+    width: 40px;
     font-size: 1.25em;
     color: red;
     background-color: white;
 }
 .smartBotGuess {
+    padding: 0px;
+    height: 45px;
+    width: 40px;
     font-size: 1.25em;
     color: red;
     background-color: white;
 }
 .hackerBotGuess {
+    padding: 0px;
+    height: 45px;
+    width: 40px;
     font-size: 1.25em;
     color: red;
     background-color: white;
 }
 .youGuess {
+    padding: 0px;
+    height: 45px;
+    width: 40px;
     font-size: 1.25em;
     color: red;
     background-color: white;
@@ -276,6 +288,3 @@ h5 {
     z-index: 100;
     visibility: hidden;
 }
-
-
-
