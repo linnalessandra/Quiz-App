@@ -1,3 +1,7 @@
+let numberOfGuesses = 0
+let numberOfBotGuesses = 0
+
+
 let smartEarlierGuess = []
 let hackerEarlierGuess = []
 
@@ -49,11 +53,25 @@ function awaitNoob() {
     setTimeout(noobBotGuess, 3000)  
 }
 
+//SHOW PLAYER INSTRUCTIONS 
 function awaitInstructPlayer() {
     console.log("awaitInstructPlayer running")
     setTimeout(playerNext, 3000)
 }
 
+//SHOW SMARTBOT'S GUESS 2 SEC
+function awaitInstructPlayerSmart() {
+    console.log("awaitInstructPlayer running")
+    setTimeout(playerNext, 2000)
+}
+
+//SWOW HACKERBOT'S GUESS 1 SEC
+function awaitInstructPlayerHacker() {
+    console.log("awaitInstructPlayer running")
+    setTimeout(playerNext, 1000)
+}
+
+//
 function awaitInstructNoob() {
     console.log("awaitInstructNoob running")
     setTimeout(noobNext, 3000)
@@ -84,6 +102,9 @@ function playerNext() {
 
 
 function guess() {
+
+    numberOfGuesses++
+
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
     let you = document.getElementById("you")
@@ -119,6 +140,8 @@ function guess() {
     }
 
 function noobBotGuess(){
+    numberOfBotGuesses++
+
     let instruct = document.getElementById("timerDiv")
 
     let noobGuess = Math.random()*20
@@ -164,6 +187,8 @@ function noobBotGuess(){
 
 //PLAYERS GUESS VS SMART BOT   
 function guessVsSmart() {
+
+    numberOfGuesses++
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
     let you = document.getElementById("you")
@@ -201,6 +226,7 @@ function guessVsSmart() {
 
 //SMART BOTS GUESS
 function smartBotGuess(){
+    numberOfBotGuesses++
 
     let instruct = document.getElementById("timerDiv")
 
@@ -235,13 +261,13 @@ function smartBotGuess(){
         
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
-        awaitInstructPlayer()
+        awaitInstructPlayerSmart()
 
     
     } else if (smartGuess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
-        awaitInstructPlayer()
+        awaitInstructPlayerSmart()
 
     } else if (smartGuess == randomNumber) {
         instruct.innerHTML = ""
@@ -256,10 +282,10 @@ function smartBotGuess(){
         }
 }
 
-//ADDS 3 SECONDS DELAY BEFORE SMART BOTS GUESS
+//ADDS 2 SECONDS DELAY BEFORE SMART BOTS GUESS
 function awaitSmart() {
     console.log("awaitSmart running")
-    setTimeout(smartBotGuess, 3000)  
+    setTimeout(smartBotGuess, 2000)  
 }
 
 //ADDS 3 SECONDS DELAY AFTER PLAYERS GUESS
@@ -284,6 +310,9 @@ function smartNext() {
 
 //PLAYERS GUESS VS HACKER BOT
 function guessVsHacker() {
+    
+    numberOfGuesses++
+
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
     let you = document.getElementById("you")
@@ -323,7 +352,8 @@ function guessVsHacker() {
 
 //HACKER BOTS GUESS
 function hackerBotGuess(){
-
+    numberOfBotGuesses++
+    
     let instruct = document.getElementById("timerDiv")
 
     let hackerGuess = Math.random()*20
@@ -356,13 +386,13 @@ function hackerBotGuess(){
         
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
-        awaitInstructPlayer()
+        awaitInstructPlayerHacker()
 
     
     } else if (hackerGuess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
-        awaitInstructPlayer()
+        awaitInstructPlayerHacker()
 
     } else if (hackerGuess == randomNumber) {
         instruct.innerHTML = ""
@@ -377,10 +407,10 @@ function hackerBotGuess(){
         }
 }
 
-//ADDS 3 SECONDS DELAY BEFORE HACKER BOTS GUESS
+//ADDS 1 SECONDS DELAY BEFORE HACKER BOTS GUESS
 function awaitHacker() {
     console.log("awaitHacker running")
-    setTimeout(hackerBotGuess, 3000)  
+    setTimeout(hackerBotGuess, 1000)  
 }
 
 //ADDS 3 SECONDS DELAY AFTER PLAYERS GUESS
