@@ -69,6 +69,8 @@ function noobNext() {
 }
 
 function playerNext() {
+    document.getElementById("smartBotGuess").innerHTML = "0"
+    document.getElementById("hackerBotGuess").innerHTML = "0"
     let instruct = document.getElementById("timerDiv")
     instruct.innerHTML = ""
     instruct.innerHTML = "Player, you're up!"
