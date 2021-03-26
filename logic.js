@@ -1,9 +1,14 @@
 let numberOfGuesses = 0
 let numberOfBotGuesses = 0
+let placeholderGuess = 0
+let maxGuess = 21
+let minGuess = 0
 
+function getRandomNumberBetween(min,max){
+    return Math.ceil(Math.random()*(max-min+1)+min);
+}
 
 let smartEarlierGuess = []
-let hackerEarlierGuess = []
 
 const checked = localStorage.getItem('id');
 if (checked == 'Check1') {
@@ -96,11 +101,6 @@ function playerNext() {
     document.getElementById("selectBtn").disabled = false;
 }
 
-
-
-
-
-
 function guess() {
 
     numberOfGuesses++
@@ -180,11 +180,6 @@ function noobBotGuess(){
         }
 }
 
-
-
-
-
-
 //PLAYERS GUESS VS SMART BOT   
 function guessVsSmart() {
 
@@ -196,6 +191,8 @@ function guessVsSmart() {
     you.innerHTML = ""
     you.innerHTML = guess
     document.getElementById("getNumber").value = ""
+
+    smartEarlierGuess.push(guess)
 
     highlightYou()
     document.getElementById("selectBtn").disabled = true;
@@ -227,7 +224,7 @@ function guessVsSmart() {
 //SMART BOTS GUESS
 function smartBotGuess(){
     numberOfBotGuesses++
-
+    
     let instruct = document.getElementById("timerDiv")
 
     let smartGuess = Math.random()*20
@@ -244,7 +241,7 @@ function smartBotGuess(){
             }
         }
     }
-
+    
     numberCheck(smartEarlierGuess)
 
     smartEarlierGuess.push(smartGuess)
@@ -254,9 +251,8 @@ function smartBotGuess(){
     smartBotGuess.innerHTML = ""
     smartBotGuess.innerHTML = smartGuess
 
-    highlightSmart()
+    /* highlightSmart() */
     
-
     if (smartGuess < randomNumber){
         
         instruct.innerHTML = ""
@@ -315,13 +311,13 @@ function guessVsHacker() {
 
     let instruct = document.getElementById("timerDiv")
     let guess = document.getElementById("getNumber").value
+    placeholderGuess = guess
+
     let you = document.getElementById("you")
     
     you.innerHTML = ""
     you.innerHTML = guess
     document.getElementById("getNumber").value = ""
-
-    hackerEarlierGuess.push(guess)
 
     highlightYou()
     document.getElementById("selectBtn").disabled = true;
@@ -329,12 +325,23 @@ function guessVsHacker() {
     if (guess < randomNumber){
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
-        awaitInstructHacker()
+        if (guess > minGuess) {
+            minGuess = guess++
+            awaitInstructHacker()
+        } else {
+            awaitInstructHacker()
+        }
+        
     
     } else if (guess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
-        awaitInstructHacker()
+        if (guess < maxGuess) {
+            maxGuess = guess--
+            awaitInstructHacker()
+        } else {
+            awaitInstructHacker()
+        }
 
     } else if (guess == randomNumber) {
         instruct.innerHTML = ""
@@ -358,23 +365,50 @@ function hackerBotGuess(){
 
     let hackerGuess = Math.random()*20
     hackerGuess = Math.ceil(hackerGuess)
-    console.log(hackerGuess)
+    console.log("hacker start guess: " + hackerGuess)
+    
+    if (randomNumber < placeholderGuess) {
+        //Lower
+        console.log("if")
+        lower()
+    } else if (randomNumber > placeholderGuess) {
+        //Higher
+        console.log("else if")
+        higher()
+    }
 
-    function numberCheck(array) {
-        for (i = 0; i < array.length; i++) {
-            
-            if (hackerGuess == array[i]) {
-                hackerGuess = Math.random()*20
-                hackerGuess = Math.ceil(hackerGuess)
-                numberCheck(array)
+    function lower() {
+        if (hackerGuess < maxGuess) {
+            if (hackerGuess > minGuess) {
+            console.log("lower guess: " + hackerGuess)
+            } else {
+                hackerGuess = getRandomNumberBetween(minGuess, maxGuess)
+                console.log("lower()")
+                lower()
             }
+        } else {
+            hackerGuess = getRandomNumberBetween(minGuess, maxGuess)
+            console.log("lower()")
+            lower()
+        } 
+    }
+    
+    function higher() {
+        if (hackerGuess > minGuess) {
+            if (maxGuess > hackerGuess) {
+            console.log("higher guess: " + hackerGuess)
+            } else {
+                hackerGuess = getRandomNumberBetween(minGuess, maxGuess)
+                higher() 
+            }
+        } else {
+            console.log("higher()")
+            hackerGuess = getRandomNumberBetween(minGuess, maxGuess)
+            higher()
         }
     }
     
-    numberCheck(hackerEarlierGuess)
-
-    hackerEarlierGuess.push(hackerGuess)
-    console.log("Array: " + hackerEarlierGuess)
+    console.log("Hacker guess: " + hackerGuess)
 
     let hackerBotGuess = document.getElementById("hackerBotGuess")
     hackerBotGuess.innerHTML = ""
@@ -383,15 +417,15 @@ function hackerBotGuess(){
     /* highlightHacker() */
     
     if (hackerGuess < randomNumber){
-        
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
+        minGuess = hackerGuess++
         awaitInstructPlayerHacker()
 
-    
     } else if (hackerGuess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
+        maxGuess = hackerGuess--
         awaitInstructPlayerHacker()
 
     } else if (hackerGuess == randomNumber) {
