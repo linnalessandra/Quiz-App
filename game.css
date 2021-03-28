@@ -1,55 +1,153 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
+    width: 100vw;
 }
 
 main {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 320px;
+    padding-top: 0.5em;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    outline: 3px dotted #526674;
+    background-color: white;
 }
 
+
 header { 
-    background-color: #424242;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
-    width: 320px;
-    padding-top: 0.25em;
+    max-width: 768px;
+    padding: 0.5em;
+    border-bottom: 3px dotted #526674;
 }
 
 footer {
-    width: 320px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 4em;
+    justify-content: space-around;
+    max-width: 450px;
     position: absolute;
-    bottom: 0px;
+    top: auto;
+    bottom: 0;
+    border-top: #424242 dotted 3px;
+}
+.home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding: 0;
+    margin-left: 0.5em;
+}
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContainer {
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding-top: 1em;
+}
+
+.loginBtn {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    align-content: flex-start;
 }
 
 p {
     color: black;
     margin-top: 0.25em;
 }
+
+b {
+    color: black;
+    margin-top: 1em;
+}
+
+h3 {
+    color: #424242;
+    font-size: 1.75em;
+    text-align: center;
+}
+
 h4 {
     font-size: 1.25em;
+    color: #424242;
 }
 
 h5 {
     font-size: 1em;
+    color: #424242;
 }
+
+.welcomeImg {
+    margin-top: 1em;
+    image-rendering: optimizeQuality;
+}
+.ptag {
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    max-width: 220px;
+    margin-top: 0.75em;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 300px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-bottom: 3px dotted #526674;
+  }
+  
+ #winnerPic {
+     margin-bottom: 0.5em;
+ }
 
 /* Knappar */
 
@@ -92,24 +190,53 @@ h5 {
 /* instruktioner */
 
 #timerDiv {
-    font-size: 1em;
+    background-color: #8b949b;
+    padding: 1em;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    border-radius: 0.5em;
+    position: relative;
+    font-size: 1em;
     margin: 1em;
     color: white;
+}
+#timerDiv:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 60%;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-right-color: #8b949b;
+        border-left: 0;
+        border-bottom: 0;
+        margin-top: -10px;
+        margin-left: -20px;
+    }
+
+.leaderBot {
+    display: grid;
+    grid-template-rows: 80px;
+    grid-template-columns: 60px 240px;
+}
+
+.leaderBotImg {
+    display: flex;
+    align-self:flex-end;
+    image-rendering: optimizeQuality;
 }
 
 /* Layout motståndare och spel */
 
 .game-board {
     display: grid;
-    grid-template-rows: 80px 140px 80px;
-    grid-template-columns: 80px 140px 80px;
-    padding-top: 2em;
+    grid-template-rows: 80px auto 80px;
+    grid-template-columns: 80px auto 80px;
+    padding-top: 2.5em;
     padding-bottom: 2.5em;
 }
-
 .box {
   display: flex;
   align-items: center;
@@ -152,7 +279,43 @@ h5 {
     image-rendering: optimizeQuality;
 }
 
+#oppText {
+    text-align: center;
+    font-size: 14px;
+    min-width: 280px;
+}
+
+/* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    outline: 4px dotted #526674;
+    padding: 0.3em;
+    background: rgb(231, 243, 252);
+  }
+  
 /* Highlight toggle div */
+
+#opponentDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.75em;
+    width: 320px;
+    height: 420px;
+    flex-wrap: wrap;
+}
 
 .opponentNoob {
     display: flex;

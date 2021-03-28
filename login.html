@@ -4,69 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="login.css">
-    <script src="login.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
+    
+    <link rel="stylesheet" href="game.css">
+    <script src="login.js"></script>
     <title>Login</title>
 </head>
 <body>
 
-    <header>
-       <div id="headerDiv">
-        
-        </div>
-    </header>
-
     <main>
+        
+        <header>
+            <h4>CHOOSE NAME</h4>
+        </header>
 
+        <div class="indexContainer">
         <div id="opponentDiv">
-            <h3>Quick play</h3>
+            <h4>Quick play</h4>
             
     
-            <div class="input-group mb-3" style="width: 70%; ">
+            <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
-                <input id="quickLogIn"type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="quickLogIn"type="text" class="form-control" placeholder="Your name" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
-            <div style="display: flex; justify-content: flex-end; width: 70%;">
-                <button type="button" onclick="addUser()" class="btn btn-primary btn-lg">Continue without login</button>
+            <div class="loginBtn">
+                <button type="button" onclick="addUser()" class="btn btn-dark">Continue without login</button>
             </div>
 
-            
-            <h3>Login</h3>
+            <br>
+            <h4>Login</h4>
             
 
-            <div class="input-group mb-3" style="width: 70%; ">
+            <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <div class="input-group mb-3" style="width: 70%; ">
+            <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-
-            <div style="display: flex; justify-content: flex-end; width: 70%;">
-                <button type="button" class="btn btn-primary btn-lg" style="margin-right: 2%;" >Register</button>
-                <button type="button" class="btn btn-primary btn-lg">Login and continue</button>
+            
+            <div class="loginBtn">
+                <button type="button" class="btn btn-dark" style="margin-right: 2%;" >Register</button>
+                <button type="button" class="btn btn-dark">Login</button>
             </div>
         
-            <button type="button" onclick="goToIndex()"class="btn btn-primary btn-lg" style="margin-right: 70%; margin-top: 10%;"><i class="arrow left"></i>Go Back</button>
         </div>
-        
-        <footer><!-- <h6>Copyright 2020-2021 by "NAMN"</h6> --></footer>
     </div>
 
-    
-    </main>
+        <footer>
+            
+            <div class="menuItems">
+                <a href="opponent.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Play</p>
+            </div>
+            
+            <div class="menuItems">
+                <a href="highscore.html" class="link-dark"><i class="bi bi-star" title="Highscore" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Highscore</p>
+            </div>
+            
+            <div class="menuItems">
+                <a href="login.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">Profile</p>
+            </div>
+            
+            <div class="menuItems">
+                <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
+                <p class="text-center">How to</p>
+            </div>
+            
+        </footer>
 
 </body>
 </html>

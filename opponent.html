@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/2ab6c683d8.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="opponent.css">
+    <link rel="stylesheet" href="game.css">
     <script defer src="opponent.js"></script>
 
-    <title>Startpage</title>
+    <title>Choose yout opponent</title>
 </head>
 
 <body>
 
-    <header>
-        <div id="headerDiv">
-            Choose your opponent
-        </div>
-        
-    </header>
     <main>
+
+        <header>
+            <h4>CHOOSE YOUR OPPONENT</h4>    
+        </header>
+        
+<!--         <div class="home">
+            <a href="index.html" class="link-dark"><i class="bi bi-arrow-left" title="Home" style="font-size: 1.5rem;"></i></a>
+        </div> -->
+
 
         <div id="opponentDiv">
         
@@ -33,70 +33,84 @@
             <div id="opponentOne">
                
                 <div id="boxNoob">
-                    <div id="oppPicOne">
+                    <label>
+                    <div id="oppPic">
                         <input type="radio" checked="true" id="Check1" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/normalbot.png">
                      </div>
+                    </label>
                 </div>
                 <div id="oppText">
                     <b>NoobBot</b><br>
-                    <p>easy | slow | kind</p>
+                    <p>Easy | Slow | Kind</p>
                 </div>
             </div>
 
             <!-- #2  -->
             <div id="opponentTwo">
                 <div id="boxNoob">
-                    <div id="oppPicTwo">
+                    <label>
+                    <div id="oppPic">
                         <input type="radio" id="Check2" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/smartbot.png">
                      </div>
+                </label>
                 </div>
                 <div id="oppText">
-                    <b>Smartbot</b><br>
-                    <p>normal | faster | clever</p>
+                    <b>SmartBot</b><br>
+                    <p>Normal | Faster | Clever</p>
                 </div>
             </div>
 
             <div id="opponentThree">
                 <div id="boxNoob">
-                    <div id="oppPicThree">
+                <label>
+                    <div id="oppPic">
                         <input type="radio" id="Check3" value="Value1" onclick="selectOnlyThis(this.id)" /><img src="assets/hackerbot.png">
                      </div>
+                </label>
                 </div>
                 <div id="oppText">
                     <b>HackerBot</b><br>
-                    <p>hard | fastest | devilish</p>
+                    <p>Hard | Fastest | Devilish</p>
                 </div>
             </div>
-
+        </div>
+<!-- 
+        <div class="leaderBot"> 
+            <img class="leaderBotImg" src="assets/leaderBot.png">
+               <div id="timerDiv">
+                Choose your opponent
+            </div>    
+        </div> -->
+        
             <div id="buttonDiv">
-                <button type="button" onclick="playGame()" class="btn btn-primary btn-lg">PLAY</button>
+                <button type="button" onclick="playGame()" class="btn btn-dark btn-lg">START</button>
             </div>
         
-            <footer class="justify-content-around border-top bg-white">
+            <footer>
             
-                <div class="d-flex flex-column align-items-center">
-                    <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                <div class="menuItems">
+                    <a href="opponent.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">Play</p>
                 </div>
                 
-                <div class="d-flex flex-column align-items-center">
-                    <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.5rem;"></i></a>
+                <div class="menuItems">
+                    <a href="highscore.html" class="link-dark"><i class="bi bi-star" title="Highscore" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">Highscore</p>
                 </div>
                 
-                <div class="d-flex flex-column align-items-center">
-                    <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
+                <div class="menuItems">
+                    <a href="login.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">Profile</p>
                 </div>
                 
-                <div class="d-flex flex-column align-items-center">
+                <div class="menuItems">
                     <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">How to</p>
                 </div>
                 
             </footer>
         
-        </div>
+       
 
         
         
@@ -106,16 +120,6 @@
     </main>
 
 
-    <!-- bootstrap-kod -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

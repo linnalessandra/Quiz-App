@@ -16,15 +16,12 @@
 
 <body>
     
-        <header>
-            <div id="timerDiv">
-                Guess a number between 1-20!
-            </div>
-            
-        </header>
-
     <main>
     
+        <header>
+                <h4 id="versus">NOOBBOT VS PLAYER</h4>
+        </header>
+        
 
         <div class="game-board">
             <div id="boxNoob">
@@ -39,7 +36,7 @@
             <div id="boxSmart">
                 <div class="oppPic">
                 <img src="assets/smartbot.png">
-                <p>Smartbot</p>
+                <p>SmartBot</p>
                 </div>
             </div>
 
@@ -93,15 +90,21 @@
                     <p>You</p>
                     </div>
             </div>
-
           </div>
         
 
-          <div id="buttonDiv">
-            <div class="input-group mb-3">
-                <input id="getNumber" type="number" class="form-control" placeholder="SELECT A NUMBER" maxlength="2">
+          <div class="leaderBot"> 
+            <img class="leaderBotImg" src="assets/leaderBot.png">
+               <div id="timerDiv">
+                Guess a number between 1-20
+            </div>    
+        </div>
+
+        <div id="buttonDiv">
+            <div class="input-group">
+                <input id="getNumber" type="number" class="form-control" placeholder="SELECT A NUMBER" maxlength="2" min="1" max="20" autofocus>
                 <div class="input-group-append">
-                    <button class="btn btn-primary btn-lg" id="selectBtn" type="button">GUESS</button>
+                    <button class="btn btn-dark btn-lg" id="selectBtn" type="button">GUESS</button>
                 </div>
             </div>
         </div>        
@@ -109,7 +112,7 @@
 
             
             
-        <div class="keyboard d-flex flex-column">
+        <!-- <div class="keyboard d-flex flex-column">
             <div class="d-flex flex-row justify-content-center mb-3">
                 <button class="btn btn-light border mx-1" type="button">1</button>
                 <button class="btn btn-light border mx-1" type="button">2</button>
@@ -128,26 +131,49 @@
             <div class="selectButton d-flex flex-column">
                 <button class="btn btn-light border mx-1 mt-2" type="button">GUESS</button>
             </div>
-        </div>
+        </div> -->
         
-        <footer class="justify-content-around border-top bg-white">
+
+        <!-- Modal -->
+
+    <div id="gameModal" class="modal" >
+
+    <!-- Modal content -->
+        <div class="modal-content">
+        <!-- <img src="assets/you.png" style="visibility:hidden"> --> 
+        <div id="winnerPic"></div>
+        <h4 id="winnerText"></h4>
+        <p>That's correct number</p>
+        <div>
+            <button onClick="window.location.reload()" type="submit" class="btn btn-dark btn" name="show">
+                Try again
+            </button>
+            <button onClick="window.location.href='opponent.html';" type="submit" class="btn btn-dark btn" style="margin-top: 0.5em;">
+                New opponent
+            </button>
+        </div>
+        </div>
+  </div>
+
+
+        <footer>
             
-            <div class="d-flex flex-column align-items-center">
-                <a href="game.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+            <div class="menuItems">
+                <a href="opponent.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">Play</p>
             </div>
             
-            <div class="d-flex flex-column align-items-center">
-                <a href="highscore.html" class="link-dark"><i class="bi bi-justify" title="Highscore" style="font-size: 1.5rem;"></i></a>
+            <div class="menuItems">
+                <a href="highscore.html" class="link-dark"><i class="bi bi-star" title="Highscore" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">Highscore</p>
             </div>
             
-            <div class="d-flex flex-column align-items-center">
-                <a href="profile.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
+            <div class="menuItems">
+                <a href="login.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">Profile</p>
             </div>
             
-            <div class="d-flex flex-column align-items-center">
+            <div class="menuItems">
                 <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">How to</p>
             </div>
