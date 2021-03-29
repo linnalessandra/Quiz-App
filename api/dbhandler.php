@@ -13,18 +13,17 @@ class Database {
 
     public $db;
 
-    private function preperQuery($query) {
+    function preperQuery($query) {
         return $this->db->prepare($query);
     }
 
-    public function runQuery($query, $entity) {
+    function runQuery($query, $entity) {
         $preparedQuery = $this->preperQuery($query);
         $status = $preparedQuery->execute((array)$entity);
-        /* return $status; */
-        return array("status" => $status, "message" => $preparedQuery->errorInfo(), "index" => $this->db->lastInsertId());
-    }
+        return $status;
+            }
 
-    public function fetchQuery($query) {
+    function fetchQuery($query) {
         $preparedQuery = $this->preperQuery($query);
         $preparedQuery->execute();
         return $preparedQuery->fetchAll(PDO::FETCH_OBJ);
