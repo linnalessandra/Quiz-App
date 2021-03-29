@@ -1,16 +1,17 @@
 <?php 
 
+require("../repositories/userRepository.php");
 session_start();
 
 if(isset($_SERVER["REQUEST_METHOD"])) {
 
-    require("./repositories/userRepository.php");
-
     if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    } else if ($_POST["action"] == "addUser") {
-        $user = json_decode($_POST["user"]);
-        echo json_encode(addUser($user));
+        $playerInfo = json_decode($_POST["playerInfo"],true);
+        echo json_encode(addHighscore($playerInfo));
+        exit;
+    } elseif($_SERVER["REQUEST_METHOD"] == "GET") {
+        echo json_encode(getHighscore());
+        exit;
     }
     
 } 

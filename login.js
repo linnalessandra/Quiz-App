@@ -8,7 +8,12 @@ function initsite() {
 
 //anrop för att lägga till user i datbasen
 async function addUser() {
-    let quickUser = {
+    let name = document.getElementById("quickLogIn")
+    localStorage.setItem("name", name.value)
+    window.location.href = "opponent.html"
+
+
+    /* let quickUser = {
         user: document.getElementById("quickLogIn").value
     }
 
@@ -17,7 +22,7 @@ async function addUser() {
     body.append("user", quickUser)
 
     const result = await makeRequest("./recievers/userReciever.php", "POST", body)
-    console.log(result)
+    console.log(result) */
 }
 
 //function för knapp till startsida
@@ -38,7 +43,7 @@ function goToIndex() {
  */
 
 //request metod
-    async function makeRequest(url, method, body) {
+async function makeRequest(url, method, body) {
     try {
         const respone = await fetch(url, { method, body })
         return respone.json()

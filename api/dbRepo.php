@@ -1,6 +1,6 @@
 <?php
 
-require_once("../api/dbhandler.php");
+/* require_once("../api/dbhandler.php"); */
 
 class dbRepo {
     function __construct() {
