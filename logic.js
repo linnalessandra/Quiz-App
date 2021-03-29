@@ -16,22 +16,25 @@ let fadeNoob = document.getElementById("boxNoob")
 let fadeHacker = document.getElementById("boxHacker")
 
 const checked = localStorage.getItem('id');
+const name = localStorage.getItem('name');
+
 if (checked == 'Check1') {
     document.getElementById("selectBtn").addEventListener("click", guess)
-    versus.innerText = "NOOBBOT VS YOU"
+    versus.innerText = "NOOBBOT VS " + name.toUpperCase()
     fadeSmart.style.opacity = "0.5";
     fadeHacker.style.opacity = "0.5";
 } else if (checked == 'Check2') {
     document.getElementById("selectBtn").addEventListener("click", guessVsSmart)
-    versus.innerHTML = "SMARTBOT VS YOU"
+    versus.innerHTML = "SMARTBOT VS " + name.toUpperCase()
     fadeNoob.style.opacity = "0.5";
     fadeHacker.style.opacity = "0.5";
 } else if (checked == 'Check3') {
     document.getElementById("selectBtn").addEventListener("click", guessVsHacker)
-    versus.innerHTML = "HACKERBOT VS YOU"
+    versus.innerHTML = "HACKERBOT VS " + name.toUpperCase()
     fadeSmart.style.opacity = "0.5";
     fadeNoob.style.opacity = "0.5";
 }
+
 /* Modal */
 
 /* const gameModal = document.getElementById("gameModal");
@@ -169,12 +172,14 @@ function guess() {
         awaitInstructNoob()
 
     } else if (guess == randomNumber) {
+
+        addHighscore(name, numberOfGuesses)
         let modalObject = document.getElementById("gameModal");
         let image = document.createElement("img");
         image.setAttribute("src", "/assets/you.png");
         document.getElementById("winnerPic").appendChild(image);
         winnerText.innerHTML = ""
-        winnerText.innerHTML = "Great you win!"
+        winnerText.innerHTML = "Great " + name +  " wins!"
         modalObject.style.display = "block";
 
         }
@@ -253,12 +258,13 @@ function guessVsSmart() {
         awaitInstructSmart()
 
     } else if (guess == randomNumber) {
+        addHighscore(name, numberOfGuesses)
         let modalObject = document.getElementById("gameModal");
         let image = document.createElement("img");
         image.setAttribute("src", "/assets/you.png");
         document.getElementById("winnerPic").appendChild(image);
         winnerText.innerHTML = ""
-        winnerText.innerHTML = "Great you win!"
+        winnerText.innerHTML = "Great " + name +  " wins!"
         modalObject.style.display = "block";
         
         }
@@ -388,12 +394,13 @@ function guessVsHacker() {
         }
 
     } else if (guess == randomNumber) {
+        addHighscore(name, numberOfGuesses)
         let modalObject = document.getElementById("gameModal");
         let image = document.createElement("img");
         image.setAttribute("src", "/assets/you.png");
         document.getElementById("winnerPic").appendChild(image);
         winnerText.innerHTML = ""
-        winnerText.innerHTML = "Great you win!"
+        winnerText.innerHTML = "Great " + name +  " wins!"
         modalObject.style.display = "block";
         
        
@@ -504,6 +511,31 @@ function hackerNext() {
 
     highlightHacker()
     awaitHacker()
+}
+
+async function addHighscore(name, score) {
+    let playerInfo = {
+        name: name,
+        score: score
+    }
+
+    let body = new FormData()
+    body.append("action", "addHighscore")
+    body.append("playerInfo", JSON.stringify(playerInfo))
+
+    //JSON.stringify(playerInfo)
+
+    let request = await makeRequest("/recievers/userRecievers.php", "POST", body)
+    console.log(request)
+}
+
+async function makeRequest(url, method, body) {
+    try {
+        const respone = await fetch(url, { method, body })
+        return respone.json()
+    } catch(err) {
+        console.log(err)
+    }
 }
 
 

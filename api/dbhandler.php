@@ -26,7 +26,7 @@ class Database {
     function fetchQuery($query) {
         $preparedQuery = $this->preperQuery($query);
         $preparedQuery->execute();
-        return $preparedQuery->fetchAll(PDO::FETCH_OBJ);
+        return $preparedQuery->fetchAll(PDO::FETCH_ASSOC);
     }
 }
 ?>
