@@ -106,13 +106,22 @@ function awaitInstructPlayer() {
 //SHOW SMARTBOT'S GUESS 2 SEC
 function awaitInstructPlayerSmart() {
     console.log("awaitInstructPlayer running")
-    setTimeout(playerNext, 2000)
+    setTimeout(noFuncSmart, 2000)
 }
 
 //SWOW HACKERBOT'S GUESS 1 SEC
 function awaitInstructPlayerHacker() {
     console.log("awaitInstructPlayer running")
-    setTimeout(playerNext, 1000)
+    setTimeout(noFuncHacker,1000)
+}
+
+function noFuncHacker() {
+    document.getElementById("hackerBotGuess").innerText = 0
+   
+}
+
+function delayFuncHacker() {
+    setTimeout(playerNext, 3000)
 }
 
 //
@@ -308,13 +317,15 @@ function smartBotGuess(){
         
         instruct.innerHTML = ""
         instruct.innerHTML = "Higher"
-        awaitInstructPlayer()
+        awaitInstructPlayerSmart()
+        delayFuncSmart()
 
     
     } else if (smartGuess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
-        awaitInstructPlayer()
+        awaitInstructPlayerSmart()
+        delayFuncSmart()
 
     } else if (smartGuess == randomNumber) {
         let modalObject = document.getElementById("gameModal");
@@ -327,6 +338,16 @@ function smartBotGuess(){
         
         }
 }
+
+function noFuncSmart() {
+    document.getElementById("smartBotGuess").innerText = 0
+   
+}
+
+function delayFuncSmart() {
+    setTimeout(playerNext, 3000)
+}
+
 
 //ADDS 2 SECONDS DELAY BEFORE SMART BOTS GUESS
 function awaitSmart() {
@@ -472,12 +493,14 @@ function hackerBotGuess(){
         instruct.innerHTML = "Higher"
         minGuess = hackerGuess++
         awaitInstructPlayerHacker()
+        delayFuncHacker()
 
     } else if (hackerGuess > randomNumber) {
         instruct.innerHTML = ""
         instruct.innerHTML = "Lower"
         maxGuess = hackerGuess--
         awaitInstructPlayerHacker()
+        delayFuncHacker()
 
     } else if (hackerGuess == randomNumber) {
         let modalObject = document.getElementById("gameModal");
@@ -494,7 +517,11 @@ function hackerBotGuess(){
 //ADDS 1 SECONDS DELAY BEFORE HACKER BOTS GUESS
 function awaitHacker() {
     console.log("awaitHacker running")
-    setTimeout(hackerBotGuess, 1000)  
+    setTimeout(hackerBotGuess, 1500)  
+}
+
+function delay() {
+    setTimeout(hackerBotGuess, 3000)  
 }
 
 //ADDS 3 SECONDS DELAY AFTER PLAYERS GUESS
@@ -511,6 +538,7 @@ function hackerNext() {
 
     highlightHacker()
     awaitHacker()
+    /* delay() */
 }
 
 async function addHighscore(name, score) {
