@@ -11,18 +11,6 @@ async function addUser() {
     let name = document.getElementById("quickLogIn")
     localStorage.setItem("name", name.value)
     window.location.href = "opponent.html"
-
-
-    /* let quickUser = {
-        user: document.getElementById("quickLogIn").value
-    }
-
-    let body = new FormData()
-    body.append("action", "addUser")
-    body.append("user", quickUser)
-
-    const result = await makeRequest("./recievers/userReciever.php", "POST", body)
-    console.log(result) */
 }
 
 //function för knapp till startsida
