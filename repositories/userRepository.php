@@ -22,7 +22,7 @@ function addHighscore($entity) {
 
 function getHighscore() {
   $db= new Database;
-  $response = $db->fetchQuery("SELECT score, name FROM `users` ORDER BY score ASC LIMIT 3;");
+  $response = $db->fetchQuery("SELECT score, name FROM `users` ORDER BY score ASC LIMIT 10;");
   return $response;
 }
 

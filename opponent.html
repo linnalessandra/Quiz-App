@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="game.css">
+    <script defer src="login.js"></script>
     <script defer src="opponent.js"></script>
 
     <title>Choose yout opponent</title>
@@ -17,15 +18,15 @@
 <body>
 
     <main>
-
         <header>
             <h4>CHOOSE YOUR OPPONENT</h4>    
         </header>
-        
-<!--         <div class="home">
-            <a href="index.html" class="link-dark"><i class="bi bi-arrow-left" title="Home" style="font-size: 1.5rem;"></i></a>
-        </div> -->
 
+        <div class="home">
+            <a href="index.html" class="link-dark" id="home"><i class="bi bi-house-door" title="Home" style="font-size: 1.2rem;"></i></a>    
+        </div>
+        
+    
 
         <div id="opponentDiv">
         
@@ -89,7 +90,7 @@
             <footer>
             
                 <div class="menuItems">
-                    <a href="opponent.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                    <a onclick="checkUser()" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">Play</p>
                 </div>
                 
@@ -97,11 +98,7 @@
                     <a href="highscore.html" class="link-dark"><i class="bi bi-star" title="Highscore" style="font-size: 1.5rem;"></i></a>
                     <p class="text-center">Highscore</p>
                 </div>
-                
-                <div class="menuItems">
-                    <a href="login.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
-                    <p class="text-center">Profile</p>
-                </div>
+            
                 
                 <div class="menuItems">
                     <a href="how-to.html" class="link-dark"><i class="bi bi-info-circle" title="How to" style="font-size: 1.5rem;"></i></a>
@@ -111,9 +108,6 @@
             </footer>
         
        
-
-        
-        
         </div>
    
    

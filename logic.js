@@ -35,11 +35,13 @@ if (checked == 'Check1') {
     fadeNoob.style.opacity = "0.5";
 }
 
-/* Modal */
+/* Guess redirect  */
 
-/* const gameModal = document.getElementById("gameModal");
-const winnerText = document.getElementById('winnerText')
-const gameModal = new mdb.Modal(document.getElementById('gameModal'), focus) */
+document.getElementById("getNumber").addEventListener("change", function() {
+    let v = parseInt(this.value);
+    if (v < 1) this.value = 1;
+    if (v > 20) this.value = 20;
+  });
 
 /* Press enter afer input */
 
@@ -144,7 +146,7 @@ function playerNext() {
     document.getElementById("hackerBotGuess").innerHTML = "0"
     let instruct = document.getElementById("timerDiv")
     instruct.innerHTML = ""
-    instruct.innerHTML = "Player, you're up!"
+    instruct.innerHTML = name + ", you're up!"
     highlightYou()
     document.getElementById("selectBtn").disabled = false;
 }

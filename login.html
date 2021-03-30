@@ -15,41 +15,48 @@
 <body>
 
     <main>
-        
         <header>
             <h4>CHOOSE NAME</h4>
         </header>
+        
+        <div class="home">
+            <a href="index.html" class="link-dark" id="home"><i class="bi bi-house-door" title="Home" style="font-size: 1.2rem;"></i></a>    
+        </div>
 
         <div class="indexContainer">
-        <div id="opponentDiv">
             
+            <div id="opponentDiv">
+                
+                <div class="usernameDiv">
+                    <div class="leaderBot"> 
+                        <img class="leaderBotImg" src="assets/you.png" alt="You" width="45" height="50">
+                           <div id="timerDivUser">
+                            Blip blop! <br> Choose my name
+                        </div>    
+                    </div>
+                
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">@</span>
-                <input id="quickLogIn"type="text" maxlength="10" class="form-control" placeholder="Your name (max 10 chars)" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="quickLogIn" type="text" maxlength="10" class="form-control" placeholder="Your name (3 - 10 chars)" aria-label="Username" aria-describedby="basic-addon1" autofocus>
             </div>
 
             <div class="loginBtn">
-                <button type="button" onclick="addUser()" class="btn btn-dark">Continue</button>
+                <button type="button" id="selectBtn" onclick="addUser()" class="btn btn-dark">Continue</button>
             </div>
-        
         </div>
-    </div>
+
+
 
         <footer>
             
             <div class="menuItems">
-                <a href="opponent.html" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
+                <a onclick="checkUser()" class="link-dark"><i class="bi bi-controller" title="Play" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">Play</p>
             </div>
             
             <div class="menuItems">
                 <a href="highscore.html" class="link-dark"><i class="bi bi-star" title="Highscore" style="font-size: 1.5rem;"></i></a>
                 <p class="text-center">Highscore</p>
-            </div>
-            
-            <div class="menuItems">
-                <a href="login.html" class="link-dark"><i class="bi bi-person-circle" title="Profile" style="font-size: 1.5rem;"></i></a>
-                <p class="text-center">Profile</p>
             </div>
             
             <div class="menuItems">

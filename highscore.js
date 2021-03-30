@@ -10,13 +10,17 @@ async function getHighscore() {
 }
 
 function renderHighscore(list) {
-    let div = document.getElementById("opponentDiv")
+    let div = document.getElementById("highscoreDiv")
     let number = 1 
     list.forEach((listItem => {
 
-        let name = document.createElement("p")
+        let highscoreLine = document.createElement("hr")
+        highscoreLine.style.borderTop = "2px dotted white"
+        let name = document.createElement("h4")
         name.innerText = number + ". " + listItem.name + " " + listItem.score + "p"
+
         div.appendChild(name)
+        div.appendChild(highscoreLine)
         number++
     }))
 }
