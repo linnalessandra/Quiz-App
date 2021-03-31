@@ -18,6 +18,9 @@ let fadeHacker = document.getElementById("boxHacker")
 const checked = localStorage.getItem('id');
 const name = localStorage.getItem('name');
 
+let playerName = document.getElementById("playerName")
+playerName.innerText = name.toUpperCase()
+
 if (checked == 'Check1') {
     document.getElementById("selectBtn").addEventListener("click", guess)
     versus.innerText = "NOOBBOT VS " + name.toUpperCase()
@@ -43,7 +46,7 @@ document.getElementById("getNumber").addEventListener("change", function() {
     if (v > 20) this.value = 20;
   });
 
-/* Press enter afer input */
+/* Press enter after input */
 
 var input = document.getElementById("getNumber");
 input.addEventListener("keyup", function(event) {
