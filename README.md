@@ -51,7 +51,7 @@ Ja, webbplatsen har botar som beter sig på olika sätt.
 ### Användare ska ha tidspress.
 Ja, användare har tidspress under spelet.
 
-### Användare ska kunna väla om den vill låta senast givna svar synas tills nästa svar ges. (VG)
+### Användare ska kunna välja om den vill låta senast givna svar synas tills nästa svar ges. (VG)
 Nej, det här kravet har vi inte tagit med.
 
 ### Användare ska kunna välja antal motståndare. (VG)
@@ -70,7 +70,7 @@ Nej, det här kravet har vi inte med.
 Ja, input fältet är i fokus när användaren ska svara. 
 
 ### Validering av input som bara tillåter siffror. (VG)
-Nej, det här kravet har vi inte med.
+Ja, det går endast att skriva in siffror i inputfältet.
 
 ### En användare ska kunna registrera sig och logga in. (VG)
 Nej, det här kravet har vi inte med. 
